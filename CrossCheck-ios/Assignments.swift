@@ -14,6 +14,9 @@ class Assignments {
     
     var urlString = "http://127.0.0.1:5000/get_schedule/kohke@bc.edu/abc"
     var assignmentArray: [Assignment] = []
+    var uniqueDate: [String] = []
+    var uniqueClass: [String] = []
+    var uniqueAssignments: [String] = []
     
     func getData(completed: @escaping() -> ()) {
         print("accessing the url \(urlString)")
@@ -35,6 +38,16 @@ class Assignments {
                 let returned = try JSONDecoder().decode(Returned.self, from: data!)
                 print(returned.data)
                 self.assignmentArray = returned.data
+                for line in self.assignmentArray {
+                    if !(self.uniqueDate.contains(line.due_date)) {
+                        self.uniqueDate.append(line.due_date)
+                    }
+                    if !(self.uniqueClass.contains(line.course_name)) {
+                        self.uniqueClass.append(line.course_name)
+                    }
+                }
+                print("\(self.uniqueDate)")
+                print("\(self.uniqueClass)")
             } catch {
                 print("JSON ERROR \(error.localizedDescription)")
             }

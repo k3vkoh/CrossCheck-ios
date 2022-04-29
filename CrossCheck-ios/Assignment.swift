@@ -10,6 +10,7 @@ import Foundation
 struct Assignment: Codable {
     var email: String
     var course_num: String
+    var course_name: String
     var assignment_name: String
     var due_date: String
     var due_time: String
