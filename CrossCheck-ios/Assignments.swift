@@ -7,6 +7,18 @@
 
 import Foundation
 
+private let inputDateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "y-M-d"
+    return dateFormatter
+} ()
+
+private let outputDateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "M/d/y"
+    return dateFormatter
+} ()
+
 class Assignments {
     private struct Returned: Codable {
         var data: [Assignment]
@@ -14,9 +26,10 @@ class Assignments {
     
     var urlString = "http://127.0.0.1:5000/get_schedule/kohke@bc.edu/abc"
     var assignmentArray: [Assignment] = []
-    var uniqueDate: [String] = []
+    var uniqueDateString: [String] = []
+    var uniqueDate: [Date] = []
     var uniqueClass: [String] = []
-    var uniqueAssignments: [String] = []
+    var uniqueAssignments = [[String: [[String: [Assignment]]]]]()
     
     func getData(completed: @escaping() -> ()) {
         print("accessing the url \(urlString)")
@@ -36,18 +49,54 @@ class Assignments {
             
             do {
                 let returned = try JSONDecoder().decode(Returned.self, from: data!)
-                print(returned.data)
+//                print(returned.data)
                 self.assignmentArray = returned.data
                 for line in self.assignmentArray {
-                    if !(self.uniqueDate.contains(line.due_date)) {
-                        self.uniqueDate.append(line.due_date)
+                    if !(self.uniqueDateString.contains(line.due_date)) {
+                        self.uniqueDateString.append(line.due_date)
                     }
                     if !(self.uniqueClass.contains(line.course_name)) {
                         self.uniqueClass.append(line.course_name)
                     }
                 }
-                print("\(self.uniqueDate)")
+                
+                for tempDate in self.uniqueDateString {
+                    var tempDict = [[String: [Assignment]]]()
+                    for tempClass in self.uniqueClass {
+                        let tempAssignments = self.assignmentArray.filter({$0.due_date == tempDate && $0.course_name == tempClass})
+                        tempDict += [[tempClass: tempAssignments]]
+                    }
+                    var resultString: String
+                    if tempDate != "" {
+                        let date = inputDateFormatter.date(from: tempDate)
+                        resultString = outputDateFormatter.string(from: date!)
+                    } else {
+                        resultString = "No Due Date"
+                    }
+                    self.uniqueAssignments += [[resultString : tempDict]]
+                }
+                
+                print("helllooooooooo")
+                print(self.uniqueAssignments)
+                
+                let filteredDates = self.uniqueDateString.filter({ $0 != "" })
+                for dateString in filteredDates {
+                    let date = inputDateFormatter.date(from: dateString)
+                    let resultString = outputDateFormatter.string(from: date!)
+                    let resultDate = outputDateFormatter.date(from: resultString)!
+                    self.uniqueDate += [resultDate]
+                }
+                let ready = self.uniqueDate.sorted(by: { $0.compare($1) == .orderedAscending })
+                self.uniqueDateString = ["No Due Date"]
+
+                for dateUnconverted in ready {
+                    let resultString = outputDateFormatter.string(from: dateUnconverted)
+                    self.uniqueDateString += [resultString]
+                }
+
+                print("\(self.uniqueDateString)")
                 print("\(self.uniqueClass)")
+                
             } catch {
                 print("JSON ERROR \(error.localizedDescription)")
             }
