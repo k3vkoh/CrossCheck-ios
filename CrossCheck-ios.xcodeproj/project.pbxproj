@@ -15,6 +15,7 @@
 		A5B4E391281B1306001A2CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B4E38F281B1306001A2CBB /* LaunchScreen.storyboard */; };
 		A5BF652F281BCF8D00D10132 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF652E281BCF8D00D10132 /* Assignment.swift */; };
 		A5BF6531281BCF9A00D10132 /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF6530281BCF9A00D10132 /* Assignments.swift */; };
+		A5BF6535281E5CA600D10132 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF6534281E5CA600D10132 /* ClassViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A5B4E392281B1306001A2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5BF652E281BCF8D00D10132 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		A5BF6530281BCF9A00D10132 /* Assignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignments.swift; sourceTree = "<group>"; };
+		A5BF6534281E5CA600D10132 /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				A5BF652E281BCF8D00D10132 /* Assignment.swift */,
 				A5BF6530281BCF9A00D10132 /* Assignments.swift */,
 				A5B4E388281B1303001A2CBB /* DateViewController.swift */,
+				A5BF6534281E5CA600D10132 /* ClassViewController.swift */,
 				A5B4E38A281B1303001A2CBB /* Main.storyboard */,
 				A5B4E38D281B1306001A2CBB /* Assets.xcassets */,
 				A5B4E38F281B1306001A2CBB /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				A5BF652F281BCF8D00D10132 /* Assignment.swift in Sources */,
 				A5B4E389281B1303001A2CBB /* DateViewController.swift in Sources */,
 				A5B4E385281B1303001A2CBB /* AppDelegate.swift in Sources */,
+				A5BF6535281E5CA600D10132 /* ClassViewController.swift in Sources */,
 				A5BF6531281BCF9A00D10132 /* Assignments.swift in Sources */,
 				A5B4E387281B1303001A2CBB /* SceneDelegate.swift in Sources */,
 			);

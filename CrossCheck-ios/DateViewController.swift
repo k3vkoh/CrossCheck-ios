@@ -32,7 +32,7 @@ extension DateViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
 //        content.textProperties.font = UIFont.preferredFont(forTextStyle: .title1)
         content.text = assignments.uniqueDateString[indexPath.row]
@@ -40,7 +40,4 @@ extension DateViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentConfiguration = content
         return cell
     }
-    
-    
 }
-
