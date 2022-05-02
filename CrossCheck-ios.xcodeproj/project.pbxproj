@@ -17,6 +17,10 @@
 		A569EBAD281FBC1A00883621 /* SetClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBAC281FBC1A00883621 /* SetClassViewController.swift */; };
 		A569EBAF281FBCFF00883621 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBAE281FBCFF00883621 /* Signup.swift */; };
 		A569EBB1281FBD7A00883621 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBB0281FBD7A00883621 /* Setup.swift */; };
+		A569EBB5281FD16200883621 /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBB4281FD16200883621 /* AddClassViewController.swift */; };
+		A569EBB7281FD65200883621 /* AddCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBB6281FD65200883621 /* AddCourse.swift */; };
+		A569EBB9281FD65E00883621 /* AddAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBB8281FD65E00883621 /* AddAssignment.swift */; };
+		A569EBBB281FE0CB00883621 /* AddAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBBA281FE0CB00883621 /* AddAssignmentViewController.swift */; };
 		A5B4E385281B1303001A2CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4E384281B1303001A2CBB /* AppDelegate.swift */; };
 		A5B4E387281B1303001A2CBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4E386281B1303001A2CBB /* SceneDelegate.swift */; };
 		A5B4E389281B1303001A2CBB /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4E388281B1303001A2CBB /* DateViewController.swift */; };
@@ -39,6 +43,10 @@
 		A569EBAC281FBC1A00883621 /* SetClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetClassViewController.swift; sourceTree = "<group>"; };
 		A569EBAE281FBCFF00883621 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		A569EBB0281FBD7A00883621 /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		A569EBB4281FD16200883621 /* AddClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
+		A569EBB6281FD65200883621 /* AddCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourse.swift; sourceTree = "<group>"; };
+		A569EBB8281FD65E00883621 /* AddAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignment.swift; sourceTree = "<group>"; };
+		A569EBBA281FE0CB00883621 /* AddAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentViewController.swift; sourceTree = "<group>"; };
 		A5B4E381281B1303001A2CBB /* CrossCheck-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrossCheck-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B4E384281B1303001A2CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B4E386281B1303001A2CBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +97,8 @@
 				A569EBA2281F8D8200883621 /* Login.swift */,
 				A569EBAE281FBCFF00883621 /* Signup.swift */,
 				A569EBB0281FBD7A00883621 /* Setup.swift */,
+				A569EBB6281FD65200883621 /* AddCourse.swift */,
+				A569EBB8281FD65E00883621 /* AddAssignment.swift */,
 				A569EBA4281F9EEC00883621 /* Success.swift */,
 				A569EB9E281F7CCB00883621 /* InitialViewController.swift */,
 				A569EBA0281F825F00883621 /* LoginViewController.swift */,
@@ -96,7 +106,9 @@
 				A569EBAC281FBC1A00883621 /* SetClassViewController.swift */,
 				A5B4E388281B1303001A2CBB /* DateViewController.swift */,
 				A5BF6534281E5CA600D10132 /* ClassViewController.swift */,
+				A569EBB4281FD16200883621 /* AddClassViewController.swift */,
 				A569EB9A281F517A00883621 /* AssignmentViewController.swift */,
+				A569EBBA281FE0CB00883621 /* AddAssignmentViewController.swift */,
 				A569EB9C281F614300883621 /* DetailViewController.swift */,
 				A5B4E38A281B1303001A2CBB /* Main.storyboard */,
 				A5B4E38D281B1306001A2CBB /* Assets.xcassets */,
@@ -179,6 +191,7 @@
 			files = (
 				A5BF652F281BCF8D00D10132 /* Assignment.swift in Sources */,
 				A569EBA5281F9EEC00883621 /* Success.swift in Sources */,
+				A569EBB7281FD65200883621 /* AddCourse.swift in Sources */,
 				A5B4E389281B1303001A2CBB /* DateViewController.swift in Sources */,
 				A5B4E385281B1303001A2CBB /* AppDelegate.swift in Sources */,
 				A569EBAD281FBC1A00883621 /* SetClassViewController.swift in Sources */,
@@ -187,12 +200,15 @@
 				A569EBB1281FBD7A00883621 /* Setup.swift in Sources */,
 				A5BF6531281BCF9A00D10132 /* Assignments.swift in Sources */,
 				A569EB9B281F517A00883621 /* AssignmentViewController.swift in Sources */,
+				A569EBBB281FE0CB00883621 /* AddAssignmentViewController.swift in Sources */,
 				A5B4E387281B1303001A2CBB /* SceneDelegate.swift in Sources */,
 				A569EBAB281FB90E00883621 /* SetInfoViewController.swift in Sources */,
 				A569EBAF281FBCFF00883621 /* Signup.swift in Sources */,
 				A569EBA1281F825F00883621 /* LoginViewController.swift in Sources */,
+				A569EBB9281FD65E00883621 /* AddAssignment.swift in Sources */,
 				A569EBA3281F8D8200883621 /* Login.swift in Sources */,
 				A569EB9D281F614300883621 /* DetailViewController.swift in Sources */,
+				A569EBB5281FD16200883621 /* AddClassViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

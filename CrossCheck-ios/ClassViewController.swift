@@ -14,6 +14,8 @@ class ClassViewController: UIViewController {
     var classAssignmentArray: [Assignment] = []
     var classes: [String] = []
     var due_date: String = ""
+    var username = ""
+    var password = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,28 @@ class ClassViewController: UIViewController {
             destination.chosen_class = classes[selectedIndexPath.row]
             destination.due_date = due_date
             destination.assignments = classAssignmentArray
+            destination.username = username
+            destination.password = password
+        } else if segue.identifier == "AddCourse" {
+            let destination = segue.destination as! UINavigationController
+            let topDestination = destination.topViewController as! AddClassViewController
+            topDestination.username = username
+        }
+    }
+    
+
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "AddCourse", sender: sender)
+    }
+    
+    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        let assignments = Assignments(inputUsername: username, inputPassword: password)
+        assignments.getData {
+            DispatchQueue.main.async {
+                self.classAssignmentArray = assignments.assignmentArray
+                self.classes = assignments.uniqueClass
+                self.tableView.reloadData()
+            }
         }
     }
 }

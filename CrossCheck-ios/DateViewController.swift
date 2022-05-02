@@ -13,6 +13,8 @@ class DateViewController: UIViewController {
     
 //    var assignments: Assignments!
     var assignments = Assignments()
+    var username = ""
+    var password = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,20 @@ class DateViewController: UIViewController {
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             destination.due_date = self.assignments.uniqueDateString[selectedIndexPath.row]
             destination.classAssignmentArray = self.assignments.assignmentArray
+            destination.username = username
+            destination.password = password
         }
     }
 
+    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        let newAssignments = Assignments(inputUsername: username, inputPassword: password)
+        assignments = newAssignments
+        assignments.getData {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 extension DateViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

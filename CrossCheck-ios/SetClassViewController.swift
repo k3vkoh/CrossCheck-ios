@@ -30,6 +30,8 @@ class SetClassViewController: UIViewController {
             let destination = segue.destination as! UINavigationController
             let topDestination = destination.topViewController as! DateViewController
             topDestination.assignments = Assignments(inputUsername: username, inputPassword: password)
+            topDestination.username = username
+            topDestination.password = password
         }
     }
     

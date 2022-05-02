@@ -27,6 +27,9 @@ class AssignmentViewController: UIViewController {
     var due_date: String = ""
     var chosen_class: String = ""
     var chosen_assignments: [Assignment] = []
+    var username = ""
+    var password = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -49,9 +52,35 @@ class AssignmentViewController: UIViewController {
             destination.chosen_class = chosen_class
             destination.due_date = due_date
             destination.chosen_assignment = chosen_assignments[selectedIndexPath.row]
+        } else if segue.identifier == "AddAssignment" {
+            let destination = segue.destination as! UINavigationController
+            let topDestination = destination.topViewController as! AddAssignmentViewController
+            topDestination.username = username
         }
     }
 
+    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        let new_assignments = Assignments(inputUsername: username, inputPassword: password)
+        new_assignments.getData {
+            DispatchQueue.main.async {
+                self.assignments = new_assignments.assignmentArray
+                var filter_date = ""
+                if self.due_date == "No Due Date" {
+                    filter_date = ""
+                } else {
+                    let temp_date = outputDateFormatter.date(from: self.due_date)!
+                    filter_date = inputDateFormatter.string(from: temp_date)
+                }
+                self.chosen_assignments = self.assignments.filter({$0.due_date == filter_date && $0.course_name == self.chosen_class})
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "AddAssignment", sender: sender)
+    }
+    
 }
 
 extension AssignmentViewController: UITableViewDelegate, UITableViewDataSource {

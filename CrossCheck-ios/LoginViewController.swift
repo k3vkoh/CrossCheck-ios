@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
             let destination = segue.destination as! UINavigationController
             let topDestination = destination.topViewController as! DateViewController
             topDestination.assignments = Assignments(inputUsername: usernameTextField.text ?? "", inputPassword: passwordTextField.text ?? "")
+            topDestination.username = usernameTextField.text ?? ""
+            topDestination.password = passwordTextField.text ?? ""
         }        
     }
     
