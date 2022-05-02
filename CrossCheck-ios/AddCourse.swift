@@ -15,8 +15,8 @@ class AddCourse {
     var urlString: String
     var valid = ""
     
-    init(inputUsername: String, course_name: String, course_num: String) {
-        urlString = "http://127.0.0.1:5000/add_course_db/\(inputUsername)/\(course_name)/\(course_num)"
+    init(inputUsername: String, course_name: String, course_num: String, method: String) {
+        urlString = "http://127.0.0.1:5000/add_course_db/\(inputUsername)/\(course_name)/\(course_num)/\(method)"
         urlString = urlString.replacingOccurrences(of: " ", with: "_")
     }
 

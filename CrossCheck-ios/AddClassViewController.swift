@@ -12,6 +12,7 @@ class AddClassViewController: UIViewController {
 
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var courseCodeTextField: UITextField!
+    @IBOutlet weak var methodTextField: UITextField!
     
     var username = ""
     
@@ -28,7 +29,7 @@ class AddClassViewController: UIViewController {
     
     @IBAction func addCourseButtonPressed(_ sender: UIButton) {
         
-        let valid = AddCourse(inputUsername: username, course_name: courseNameTextField.text ?? "", course_num: courseCodeTextField.text ?? "")
+        let valid = AddCourse(inputUsername: username, course_name: courseNameTextField.text ?? "", course_num: courseCodeTextField.text ?? "", method: methodTextField.text ?? "")
         valid.getData {
             DispatchQueue.main.async {
                 if valid.valid == "true" {
