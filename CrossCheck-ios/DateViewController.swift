@@ -11,6 +11,7 @@ class DateViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+//    var assignments: Assignments!
     var assignments = Assignments()
     
     override func viewDidLoad() {

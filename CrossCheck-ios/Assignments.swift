@@ -24,13 +24,22 @@ class Assignments {
         var data: [Assignment]
     }
     
-    var urlString = "http://127.0.0.1:5000/get_schedule/kohke@bc.edu/abc"
+    var urlString: String
+    
+    init() {
+        urlString = ""
+    }
+    
+    init(inputUsername: String, inputPassword: String) {
+        urlString = "http://127.0.0.1:5000/get_schedule/\(inputUsername)/\(inputPassword)"
+    }
     var assignmentArray: [Assignment] = []
     var uniqueDateString: [String] = []
     var uniqueDate: [Date] = []
     var uniqueClass: [String] = []
     
     func getData(completed: @escaping() -> ()) {
+        
         print("accessing the url \(urlString)")
         
         guard let url = URL(string: urlString) else {
@@ -74,9 +83,9 @@ class Assignments {
                     self.uniqueDateString += [resultString]
                 }
 
-                print("\(self.uniqueDateString)")
-                print("\(self.uniqueClass)")
-                print("\(self.assignmentArray.filter({$0.due_date == "2022-01-29" && $0.course_name == "GLOB 2"}))")
+//                print("\(self.uniqueDateString)")
+//                print("\(self.uniqueClass)")
+//                print("\(self.assignmentArray.filter({$0.due_date == "2022-01-29" && $0.course_name == "GLOB 2"}))")
                 
             } catch {
                 print("JSON ERROR \(error.localizedDescription)")
