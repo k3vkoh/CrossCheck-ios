@@ -13,6 +13,10 @@
 		A569EBA1281F825F00883621 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBA0281F825F00883621 /* LoginViewController.swift */; };
 		A569EBA3281F8D8200883621 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBA2281F8D8200883621 /* Login.swift */; };
 		A569EBA5281F9EEC00883621 /* Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBA4281F9EEC00883621 /* Success.swift */; };
+		A569EBAB281FB90E00883621 /* SetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBAA281FB90E00883621 /* SetInfoViewController.swift */; };
+		A569EBAD281FBC1A00883621 /* SetClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBAC281FBC1A00883621 /* SetClassViewController.swift */; };
+		A569EBAF281FBCFF00883621 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBAE281FBCFF00883621 /* Signup.swift */; };
+		A569EBB1281FBD7A00883621 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569EBB0281FBD7A00883621 /* Setup.swift */; };
 		A5B4E385281B1303001A2CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4E384281B1303001A2CBB /* AppDelegate.swift */; };
 		A5B4E387281B1303001A2CBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4E386281B1303001A2CBB /* SceneDelegate.swift */; };
 		A5B4E389281B1303001A2CBB /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4E388281B1303001A2CBB /* DateViewController.swift */; };
@@ -31,6 +35,10 @@
 		A569EBA0281F825F00883621 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A569EBA2281F8D8200883621 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A569EBA4281F9EEC00883621 /* Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Success.swift; sourceTree = "<group>"; };
+		A569EBAA281FB90E00883621 /* SetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInfoViewController.swift; sourceTree = "<group>"; };
+		A569EBAC281FBC1A00883621 /* SetClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetClassViewController.swift; sourceTree = "<group>"; };
+		A569EBAE281FBCFF00883621 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		A569EBB0281FBD7A00883621 /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 		A5B4E381281B1303001A2CBB /* CrossCheck-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrossCheck-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B4E384281B1303001A2CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B4E386281B1303001A2CBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,9 +87,13 @@
 				A5BF652E281BCF8D00D10132 /* Assignment.swift */,
 				A5BF6530281BCF9A00D10132 /* Assignments.swift */,
 				A569EBA2281F8D8200883621 /* Login.swift */,
+				A569EBAE281FBCFF00883621 /* Signup.swift */,
+				A569EBB0281FBD7A00883621 /* Setup.swift */,
 				A569EBA4281F9EEC00883621 /* Success.swift */,
 				A569EB9E281F7CCB00883621 /* InitialViewController.swift */,
 				A569EBA0281F825F00883621 /* LoginViewController.swift */,
+				A569EBAA281FB90E00883621 /* SetInfoViewController.swift */,
+				A569EBAC281FBC1A00883621 /* SetClassViewController.swift */,
 				A5B4E388281B1303001A2CBB /* DateViewController.swift */,
 				A5BF6534281E5CA600D10132 /* ClassViewController.swift */,
 				A569EB9A281F517A00883621 /* AssignmentViewController.swift */,
@@ -169,11 +181,15 @@
 				A569EBA5281F9EEC00883621 /* Success.swift in Sources */,
 				A5B4E389281B1303001A2CBB /* DateViewController.swift in Sources */,
 				A5B4E385281B1303001A2CBB /* AppDelegate.swift in Sources */,
+				A569EBAD281FBC1A00883621 /* SetClassViewController.swift in Sources */,
 				A569EB9F281F7CCB00883621 /* InitialViewController.swift in Sources */,
 				A5BF6535281E5CA600D10132 /* ClassViewController.swift in Sources */,
+				A569EBB1281FBD7A00883621 /* Setup.swift in Sources */,
 				A5BF6531281BCF9A00D10132 /* Assignments.swift in Sources */,
 				A569EB9B281F517A00883621 /* AssignmentViewController.swift in Sources */,
 				A5B4E387281B1303001A2CBB /* SceneDelegate.swift in Sources */,
+				A569EBAB281FB90E00883621 /* SetInfoViewController.swift in Sources */,
+				A569EBAF281FBCFF00883621 /* Signup.swift in Sources */,
 				A569EBA1281F825F00883621 /* LoginViewController.swift in Sources */,
 				A569EBA3281F8D8200883621 /* Login.swift in Sources */,
 				A569EB9D281F614300883621 /* DetailViewController.swift in Sources */,
