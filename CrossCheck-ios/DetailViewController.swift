@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         dateLabel.text = due_date
         timeLabel.text = chosen_assignment.due_time
         weekdayLabel.text = chosen_assignment.day_name
-        weekdayLabel.text = chosen_assignment.submission_status
+        submittedLabel.text = chosen_assignment.submission_status
     }
 
 }
