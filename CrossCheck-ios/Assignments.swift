@@ -9,13 +9,13 @@ import Foundation
 
 private let inputDateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "y-M-d"
+    dateFormatter.dateFormat = "y-MM-dd"
     return dateFormatter
 } ()
 
 private let outputDateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "M/d/y"
+    dateFormatter.dateFormat = "MM/dd/y"
     return dateFormatter
 } ()
 
@@ -29,7 +29,6 @@ class Assignments {
     var uniqueDateString: [String] = []
     var uniqueDate: [Date] = []
     var uniqueClass: [String] = []
-    var uniqueAssignments = [[String: [[String: [Assignment]]]]]()
     
     func getData(completed: @escaping() -> ()) {
         print("accessing the url \(urlString)")
@@ -60,25 +59,6 @@ class Assignments {
                     }
                 }
                 
-                for tempDate in self.uniqueDateString {
-                    var tempDict = [[String: [Assignment]]]()
-                    for tempClass in self.uniqueClass {
-                        let tempAssignments = self.assignmentArray.filter({$0.due_date == tempDate && $0.course_name == tempClass})
-                        tempDict += [[tempClass: tempAssignments]]
-                    }
-                    var resultString: String
-                    if tempDate != "" {
-                        let date = inputDateFormatter.date(from: tempDate)
-                        resultString = outputDateFormatter.string(from: date!)
-                    } else {
-                        resultString = "No Due Date"
-                    }
-                    self.uniqueAssignments += [[resultString : tempDict]]
-                }
-                
-                print("helllooooooooo")
-                print(self.uniqueAssignments)
-                
                 let filteredDates = self.uniqueDateString.filter({ $0 != "" })
                 for dateString in filteredDates {
                     let date = inputDateFormatter.date(from: dateString)
@@ -96,6 +76,7 @@ class Assignments {
 
                 print("\(self.uniqueDateString)")
                 print("\(self.uniqueClass)")
+                print("\(self.assignmentArray.filter({$0.due_date == "2022-01-29" && $0.course_name == "GLOB 2"}))")
                 
             } catch {
                 print("JSON ERROR \(error.localizedDescription)")
