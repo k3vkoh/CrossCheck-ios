@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var weekdayLabel: UILabel!
+    @IBOutlet weak var submittedLabel: UILabel!
     
     var chosen_assignment: Assignment!
     var due_date: String = ""
@@ -29,6 +30,7 @@ class DetailViewController: UIViewController {
         dateLabel.text = due_date
         timeLabel.text = chosen_assignment.due_time
         weekdayLabel.text = chosen_assignment.day_name
+        weekdayLabel.text = chosen_assignment.submission_status
     }
 
 }
